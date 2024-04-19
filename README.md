@@ -12,7 +12,7 @@ This is a simple web application built with Express.js and Handlebars that gener
 ## Installation
 1. Clone the repository:
 ```
-git clone ???
+git clone https://github.com/DonaldWongSuiSang/Password-Generator.git
 ```
 
 2. Navigate to the project directory:
