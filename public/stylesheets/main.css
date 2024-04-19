@@ -1,0 +1,53 @@
+body {
+background-color: darkgray;
+}
+
+form {
+  background-color: white;
+  width: 90%;
+  margin-top: 50px;
+  padding: 20px 50px;
+}
+
+h3 {
+  padding: 20px 0px;
+  border-bottom: solid 1px slategrey;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 5px;
+  width: 300px;
+}
+  
+    /* Style to ensure inputs and <p> elements are displayed inline */
+input[type="text"],
+input[type="checkbox"],
+input[type="number"],
+p {
+  display: inline;
+  vertical-align: middle;
+  /* Aligns input elements and <p> elements to the top */
+}
+
+input[type="number"],
+input[type="text"],
+#form-control {
+  width: 500px;
+}
+
+.remarks{
+  font-size: 14px;
+  display: block;
+  margin-left: 305px;
+  color: gray;  
+}
+
+.passwordGenerated{
+  background-color: skyblue;
+  display: block;
+  height: 50px;
+  display: grid;
+  align-items: center; 
+padding-left: 20px;
+}

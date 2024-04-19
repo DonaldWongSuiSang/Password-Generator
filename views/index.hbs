@@ -1,8 +1,74 @@
-<div class="mb-3">
-  <label for="formGroupExampleInput" class="form-label">Example label</label>
-  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-</div>
-<div class="mb-3">
-  <label for="formGroupExampleInput2" class="form-label">Another label</label>
-  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+<div class="container">
+
+ 
+  <form action="/" id="form" method="post" novalidate>
+    <h3>Random Password Generator</h3>
+  
+  <div class="mb-3">
+    <label for="length" class="form-label">Password Length</label>
+    <input name='length' class="form-control" id="length" type="number" min="4" max="16" value="{{result.length}}" required>
+    <p class="remarks">Length is available between 4 ~ 16</p>
+
+  </div>
+
+  <div class="mb-3">
+    <label for="lowerCase">Include Lowercase Characters</label>
+    <input name="lowerCase" id="lowerCase" type="checkbox" {{#if result.lowerCase}} checked{{/if}}>
+    <p>(e.g. abcdefg)</p>
+  </div>
+
+  <div class="mb-3">
+    <label for="upperCase">Include Uppercase Characters</label>
+    <input name="upperCase" id="upperCase" type="checkbox" {{#if result.upperCase}} checked{{/if}}>
+    <p>(e.g. ABCDEFG)</p>
+  </div>
+
+  <div class="mb-3">
+    <label for="number">Include Numbers</label>
+    <input name="number" id="number" type="checkbox" {{#if result.number}} checked{{/if}}> 
+    <p>(e.g. 123456)</p>
+  </div>
+  
+  <div class="mb-3">
+    <label for="symbols">Include Symbols</label>
+    <input name="symbols" id="symbols" type="checkbox" {{#if result.symbols}} checked{{/if}}>
+    <p>(e.g.@#$%)</p>
+  </div>
+  
+  <div class="mb-3">
+    <label for="exclude">Exclude Characters</label>
+    <input name="exclude" id="exclude" type="text" value="{{result.exclude}}">
+    <p class="remarks">These characters will not appear in the password</p>
+  </div>
+  
+  {{#if password}}
+  <div class="mb-3">
+    <p class="passwordGenerated">Your password is: {{password}}   </p>
+  </div>
+  {{/if}}
+
+  <button type="submit" id='submit' class="btn btn-primary my-3">Generate Password</button>
+
+</form>
+
+
+
+<script>
+  const form = document.querySelector('#form')
+  const submitButton = document.querySelector('#submit')
+
+  submitButton.addEventListener('click', function onSubmitButtonClicked(event) {
+      form.classList.add('was-validated')
+    })
+
+  form.addEventListener('submit', function onFormSubmitted(event) {
+    if (!form.checkValidity()) {
+      event.stopPropagation()
+      event.preventDefault()
+    }
+  })
+
+</script>
+
+
 </div>
